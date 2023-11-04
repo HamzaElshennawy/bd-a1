@@ -1,30 +1,18 @@
 import pandas as pd
 
 def describe_data(dataset):
-  """Generates descriptive statistics for the dataset.
-
-  Args:
-    dataset: A Pandas DataFrame containing the dataset.
-  """
+  
 
   print(dataset.describe())
 
 def find_correlations(dataset):
-  """Finds the correlations between the features in the dataset.
-
-  Args:
-    dataset: A Pandas DataFrame containing the dataset.
-  """
+  
 
   correlation_matrix = dataset.corr()
   print(correlation_matrix)
 
 def find_outliers(dataset):
-  """Finds the outliers in the dataset.
-
-  Args:
-    dataset: A Pandas DataFrame containing the dataset.
-  """
+  
 
   for column in dataset.columns:
     outliers = dataset[column][(dataset[column] < dataset[column].quantile(0.05)) | (dataset[column] > dataset[column].quantile(0.95))]
